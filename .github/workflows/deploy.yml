@@ -1,25 +1,23 @@
-name: React S3 & CloudFront Deploy
+name: React Deploy
 
 on:
   push:
     branches:
-      - main
+      - main  # 만약 내 브랜치가 master라면 master로 수정!
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
 
-      - name: Build project
-        run: npm run build
-
-      - name: Deploy to S3
+      - name: S3 Deploy
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --delete
@@ -30,7 +28,7 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           SOURCE_DIR: 'build'
 
-      - name: Invalidate CloudFront Cache
+      - name: CloudFront Invalidation
         run: |
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \

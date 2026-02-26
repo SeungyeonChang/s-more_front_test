@@ -1,0 +1,452 @@
+.movie-booking-page {
+  padding: 40px 0 80px;
+  min-height: calc(100vh - 130px);
+  background: linear-gradient(to bottom, #1a1a2e 0%, #16213e 100%);
+  color: white;
+}
+
+.movie-booking-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== 타이틀 행 ===== */
+.booking-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.booking-title-row h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+}
+
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-back:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== 2분할 레이아웃 ===== */
+.booking-layout {
+  display: grid;
+  /* 좌측 영화 정보 : 우측 결제 폼 = 1.2 : 1 */
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   좌측: 영화 포스터 + 상영 정보
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.booking-movie-info {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 포스터 + 텍스트 가로 배치 */
+.booking-movie-header {
+  display: flex;
+  gap: 20px;
+}
+
+.booking-movie-header img {
+  width: 140px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.booking-movie-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 4px;
+}
+
+.booking-movie-meta h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+}
+
+.booking-movie-meta p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.booking-rating {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(255, 215, 0, 0.2);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 6px;
+  font-size: 12px;
+  color: #ffd700;
+  width: fit-content;
+}
+
+.booking-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+/* 상영 정보 */
+.booking-screening-info {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.booking-screening-info h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffd700;
+  margin-bottom: 14px;
+}
+
+.screening-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 14px;
+}
+
+.screening-detail-item:last-child {
+  border-bottom: none;
+}
+
+.screening-detail-item svg {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+}
+
+.screening-detail-item span {
+  color: rgba(255, 255, 255, 0.6);
+  flex: 1;
+}
+
+.screening-detail-item strong {
+  color: white;
+  font-weight: 700;
+}
+
+/* 좌석 상태 색상 */
+.available { color: #2ecc71 !important; }
+.limited   { color: #f39c12 !important; }
+.sold-out  { color: #e74c3c !important; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   우측: 예매 폼 + 결제
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.booking-form {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* form-group 공통 */
+.booking-form .form-group {
+  margin-bottom: 20px;
+}
+
+.booking-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+}
+
+/* 인원 stepper */
+.people-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(10, 10, 25, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.stepper-btn {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.stepper-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.stepper-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.stepper-value {
+  min-width: 56px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+.help-text {
+  margin-top: 6px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* 아이콘 포함 input */
+.input-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(10, 10, 25, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: border-color 0.2s;
+}
+
+.input-with-icon:focus-within {
+  border-color: #6c5ce7;
+}
+
+.input-with-icon svg {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.45);
+  flex-shrink: 0;
+}
+
+.input-with-icon input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+}
+
+.input-with-icon input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* 결제 수단 */
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.method-btn {
+  padding: 10px 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.method-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.method-btn.active {
+  background: rgba(108, 92, 231, 0.3);
+  border-color: #6c5ce7;
+  color: white;
+}
+
+/* 결제 금액 요약 */
+.payment-summary {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.summary-row.total {
+  color: white;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.summary-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 4px 0;
+}
+
+.total-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffd700;
+}
+
+/* 약관 동의 */
+.agree-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.agree-row input[type="checkbox"] {
+  margin-top: 2px;
+  width: 15px;
+  height: 15px;
+  accent-color: #6c5ce7;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* 결제 버튼들 */
+.payment-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* 실제 결제 버튼 */
+.btn-primary {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+}
+
+/* 개발용 버튼 */
+.btn-dev {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+.btn-dev:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+}
+
+/* 에러 fallback */
+.booking-error {
+  text-align: center;
+  padding: 80px 20px;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 960px) {
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .movie-booking-page {
+    padding: 24px 0 60px;
+  }
+
+  .booking-title-row h1 {
+    font-size: 22px;
+  }
+
+  .booking-movie-header {
+    flex-direction: column;
+  }
+
+  .booking-movie-header img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .payment-methods {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

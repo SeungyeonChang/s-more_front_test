@@ -1,0 +1,195 @@
+
+/* 1. Modal Root Elements */
+.admin-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.admin-modal-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  display: flex; /* 레이아웃 고정을 위해 추가 */
+  flex-direction: column; /* 세로 배치 */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+  overflow: hidden;
+}
+
+.admin-modal-content.large { max-width: 800px; }
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 2. Layout Sections */
+.admin-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.admin-modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.admin-modal-close {
+  background: none; border: none;
+  font-size: 24px; color: #6b7280;
+  cursor: pointer; padding: 4px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 6px; transition: all 0.2s;
+}
+
+.admin-modal-close:hover { background: #f3f4f6; color: #1f2937; }
+
+.admin-modal-body {
+  padding: 24px;
+  overflow-y: auto; /* 핵심: 내용 길면 여기서 스크롤 */
+  flex: 1;
+}
+
+.admin-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 0 0 12px 12px;
+  flex-shrink: 0;
+}
+
+/* 3. Form & Inputs */
+.admin-form-group { margin-bottom: 20px; }
+.admin-form-group label {
+  display: block; margin-bottom: 8px;
+  font-weight: 500; color: #374151; font-size: 14px;
+}
+.admin-form-group input,
+.admin-form-group select,
+.admin-form-group textarea {
+  width: 100%; padding: 10px 12px;
+  border: 1px solid #d1d5db; border-radius: 8px;
+  font-size: 14px; transition: all 0.2s;
+}
+.admin-form-group input:focus,
+.admin-form-group select:focus,
+.admin-form-group textarea:focus {
+  outline: none; border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+.admin-form-group textarea { resize: vertical; min-height: 80px; font-family: inherit; }
+.admin-form-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+/* 4. Checkboxes (Amenities 등) */
+.admin-checkbox-label {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px; cursor: pointer; border-radius: 6px; transition: background 0.2s;
+}
+.admin-checkbox-label:hover { background: #f3f4f6; }
+.admin-checkbox-label input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
+.admin-checkbox-label span { font-size: 14px; color: #374151; }
+.admin-amenities-checkboxes {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 8px; padding: 12px; background: #f9fafb; border-radius: 8px;
+}
+
+/* 5. Buttons (중요: 다른 파일이 못 건드리게 !important 추가) */
+.admin-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px !important; border: none !important;
+  border-radius: 8px !important; font-size: 14px !important;
+  font-weight: 500 !important; cursor: pointer; transition: all 0.2s;
+}
+
+.admin-btn-primary {
+  background: #3b82f6 !important; /* 파란색 고정 */
+  color: white !important;
+}
+
+.admin-btn-primary:hover {
+  background: #2563eb !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.admin-btn-outline {
+  background: white !important;
+  color: #6b7280 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.admin-btn-sm { padding: 6px 12px !important; font-size: 13px !important; }
+
+/* 6. Tabs */
+.admin-tabs { display: flex; gap: 8px; margin-bottom: 24px; border-bottom: 2px solid #e5e7eb; }
+.admin-tab { 
+  padding: 12px 24px; background: none; border: none;
+  border-bottom: 2px solid transparent; font-size: 14px;
+  font-weight: 500; color: #6b7280; cursor: pointer; transition: all 0.2s;
+  margin-bottom: -2px;
+}
+.admin-tab:hover { color: #1f2937; background: #f9fafb; }
+.admin-tab.active { color: #3b82f6; border-bottom-color: #3b82f6; }
+
+/* 7. Action Buttons (세부 색상 유지) */
+.admin-action-buttons { display: flex; gap: 8px; }
+.admin-action-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border: none; border-radius: 6px;
+  cursor: pointer; transition: all 0.2s; font-size: 16px;
+}
+.admin-action-btn.edit { background: #dbeafe; color: #3b82f6; }
+.admin-action-btn.edit:hover { background: #3b82f6; color: white; }
+.admin-action-btn.delete { background: #fee2e2; color: #ef4444; }
+.admin-action-btn.delete:hover { background: #ef4444; color: white; }
+.admin-action-btn.email { background: #f3e8ff; color: #9333ea; }
+.admin-action-btn.email:hover { background: #9333ea; color: white; }
+.admin-action-btn.toggle { background: #f3f4f6; color: #6b7280; }
+.admin-action-btn.toggle.active { background: #fef3c7; color: #f59e0b; }
+
+/* 8. Pagination */
+.admin-pagination { display: flex; justify-content: center; align-items: center; gap: 8px; padding: 20px; margin-top: 20px; }
+.admin-pagination-btn {
+  padding: 8px 16px; border: 1px solid #d1d5db; background: white;
+  color: #374151; border-radius: 6px; font-size: 14px; cursor: pointer;
+}
+.admin-pagination-btn.active { background: #3b82f6; color: white; border-color: #3b82f6; }
+
+/* 9. Loading Spinner */
+.admin-loading-spinner { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; gap: 16px; }
+.admin-loading-spinner svg { font-size: 48px; color: #3b82f6; animation: spin 1s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* 10. Responsive */
+@media (max-width: 768px) {
+  .admin-modal-content { width: 95%; max-height: 95vh; }
+  .admin-modal-body { padding: 16px; }
+  .admin-modal-footer { padding: 12px 16px; }
+  .admin-form-row { grid-template-columns: 1fr; }
+  .admin-amenities-checkboxes { grid-template-columns: 1fr; }
+}
+
+/* 11. Form Flex Fix */
+.admin-modal-content form {
+  display: flex; flex-direction: column; flex: 1;
+  overflow: hidden; min-height: 0;
+}

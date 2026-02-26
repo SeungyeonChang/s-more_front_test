@@ -1,0 +1,324 @@
+:root {
+  --primary-color: #66bb6a;
+  --primary-dark: #4caf50;
+  --secondary-color: #81c784;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --danger-color: #e74c3c;
+  --border-color: #ecf0f1;
+  --bg-secondary: #f8f9fa;
+  --bg-dark: #2c3e50;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 70px;
+  background: white;
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Header 내부 컨테이너 */
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px; /* ✅ 로고와 네비게이션 사이 간격 증가 */
+}
+
+/* 로고 */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary-color);
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.logo:hover {
+  color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  font-size: 36px;
+}
+
+.logo-text {
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+}
+
+/* 네비게이션 */
+.nav {
+  display: flex;
+  gap: 40px; /* ✅ 탭 사이 간격 증가 */
+  flex: 1;
+  justify-content: flex-start;
+  padding-left: 40px; /* ✅ 로고와의 추가 간격 */
+}
+
+.nav a {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color 0.2s;
+  position: relative;
+  padding: 8px 0;
+  white-space: nowrap;
+}
+
+.nav a:hover {
+  color: var(--primary-color);
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--primary-color);
+  transition: width 0.3s;
+  border-radius: 2px;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* 액션 버튼들 */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--text-primary);
+  transition: all 0.3s;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--primary-color);
+}
+
+.icon-btn .badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--danger-color);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  border: 2px solid white;
+}
+
+/* 사용자 메뉴 */
+.user-menu {
+  position: relative;
+}
+
+.user-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 24px;
+  background: var(--bg-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.user-btn:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.user-menu:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown a,
+.dropdown button {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all 0.2s;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown a:hover,
+.dropdown button:hover {
+  background: var(--bg-secondary);
+  color: var(--primary-color);
+}
+
+.dropdown button:last-child {
+  border-top: 1px solid var(--border-color);
+  color: var(--danger-color);
+}
+
+.dropdown button:last-child:hover {
+  background: #ffebee;
+}
+
+/* 모바일 메뉴 토글 */
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+
+.menu-toggle:hover {
+  color: var(--primary-color);
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 1024px) {
+  .header-container {
+    gap: 32px;
+  }
+
+  .nav {
+    gap: 28px;
+    padding-left: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 16px;
+    gap: 16px;
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
+
+  /* ✅ 모바일에서 네비게이션 숨기고 햄버거 메뉴만 표시 */
+  .nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+  }
+
+  .nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav a {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+
+  .nav a::after {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-icon {
+    font-size: 28px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .user-btn span {
+    display: none;
+  }
+}

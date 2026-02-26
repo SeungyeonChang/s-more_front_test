@@ -1,0 +1,387 @@
+.home-page {
+  background: var(--bg-secondary);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.quick-booking {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.booking-input {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.booking-input svg {
+  position: absolute;
+  left: 16px;
+  color: var(--text-secondary);
+  font-size: 18px;
+}
+
+.booking-input input,
+.booking-input select {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.quick-booking .btn {
+  padding: 14px 32px;
+  white-space: nowrap;
+}
+
+/* Weather Widget */
+.weather-widget {
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+}
+
+.weather-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: var(--shadow);
+}
+
+.weather-icon {
+  font-size: 64px;
+}
+
+.weather-info h3 {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.weather-info .temp {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.weather-info .condition {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.ai-recommend-banner {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.ai-recommend-banner:hover {
+  transform: translateY(-4px);
+}
+
+.ai-recommend-banner svg {
+  font-size: 48px;
+}
+
+.ai-recommend-banner h4 {
+  font-size: 24px;
+  margin: 0 0 8px 0;
+}
+
+.ai-recommend-banner p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Sections */
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.view-all {
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.view-all:hover {
+  color: #45a049;
+}
+
+/* Promotions */
+.promotions-section {
+  margin: 60px 0;
+}
+
+.promotions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.promotion-card {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  border-left: 4px solid;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+.promotion-card:hover {
+  transform: translateY(-4px);
+}
+
+.promotion-card h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.promotion-card p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+/* Popular Sites */
+.popular-sites-section {
+  margin: 60px 0;
+}
+
+.sites-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.site-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.site-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.site-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.site-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.site-rating {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.site-info {
+  padding: 16px;
+}
+
+.site-info h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.site-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.site-tags .tag {
+  background: var(--bg-secondary);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.site-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.site-price .price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.site-price .period {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Quick Links */
+.quick-links-section {
+  margin: 60px 0;
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.quick-link-card {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+.quick-link-card:hover {
+  transform: translateY(-4px);
+}
+
+.quick-link-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.quick-link-card h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.quick-link-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Features */
+.features-section {
+  margin: 60px 0 80px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.feature-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.feature-card h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sites-grid,
+  .quick-links-grid,
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .quick-booking {
+    flex-direction: column;
+  }
+
+  .weather-widget {
+    grid-template-columns: 1fr;
+  }
+
+  .promotions-grid,
+  .sites-grid,
+  .quick-links-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}

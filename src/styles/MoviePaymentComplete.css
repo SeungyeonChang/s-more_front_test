@@ -1,0 +1,127 @@
+.movie-complete-page {
+  padding: 40px 0;
+  min-height: calc(100vh - 130px);
+  background: linear-gradient(to bottom, #1a1a2e 0%, #16213e 100%);
+  color: white;
+}
+
+.movie-complete-page .container {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.complete-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 32px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.complete-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: rgba(76, 175, 80, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4caf50;
+  font-size: 34px;
+}
+
+.complete-card h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.complete-sub {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+/* 정보 박스 */
+.complete-info {
+  text-align: left;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 24px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.info-row + .info-row {
+  border-top: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
+.info-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+.info-label svg {
+  font-size: 16px;
+}
+
+.info-value {
+  font-weight: 600;
+  text-align: right;
+}
+
+.info-row.total .info-label {
+  font-weight: 700;
+}
+
+.info-row.total .info-value {
+  color: #ffd700;
+  font-size: 16px;
+}
+
+/* 버튼 */
+.complete-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.complete-actions .btn {
+  width: 100%;
+}
+
+/* 반응형 */
+@media (max-width: 600px) {
+  .movie-complete-page {
+    padding: 24px 0;
+  }
+
+  .complete-card {
+    padding: 24px 20px;
+  }
+
+  .complete-info {
+    padding: 14px 14px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-value {
+    text-align: left;
+  }
+}

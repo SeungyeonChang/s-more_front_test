@@ -1,0 +1,654 @@
+.admin-game {
+  padding: 32px;
+}
+
+/* Statistics */
+.game-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.stat-icon.active {
+  background: linear-gradient(135deg, #FF9800, #F57C00);
+}
+
+.stat-icon.completed {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* Tabs */
+.admin-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.admin-tabs .tab {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: -2px;
+}
+
+.admin-tabs .tab:hover {
+  color: var(--primary-color);
+}
+
+.admin-tabs .tab.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* Table */
+.tournaments-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.tournaments-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tournaments-table thead {
+  background: #f8f8f8;
+}
+
+.tournaments-table th {
+  padding: 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.tournaments-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.tournaments-table tbody tr {
+  transition: all 0.2s;
+}
+
+.tournaments-table tbody tr:hover {
+  background: #f8f8f8;
+}
+
+.tournaments-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Tournament Title Cell */
+.tournament-title-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tournament-icon {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tournament-title-cell strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.current-round {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #FF9800;
+  color: white;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* Badges */
+.game-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #e8f5e9;
+  color: #4CAF50;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-recruiting {
+  background: #e8f5e9;
+  color: #4CAF50;
+}
+
+.status-ongoing {
+  background: #fff3e0;
+  color: #FF9800;
+}
+
+.status-paused {
+  background: #e3f2fd;
+  color: #2196F3;
+}
+
+.status-completed {
+  background: #f5f5f5;
+  color: #757575;
+}
+
+.participants-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+}
+
+.participants-info svg {
+  font-size: 16px;
+}
+
+.prize-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #fff3e0;
+  color: #FF9800;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.prize-badge svg {
+  font-size: 16px;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn.start {
+  background: #e8f5e9;
+  color: #4CAF50;
+}
+
+.action-btn.start:hover {
+  background: #4CAF50;
+  color: white;
+}
+
+.action-btn.pause {
+  background: #e3f2fd;
+  color: #2196F3;
+}
+
+.action-btn.pause:hover {
+  background: #2196F3;
+  color: white;
+}
+
+.action-btn.complete {
+  background: #f3e5f5;
+  color: #9C27B0;
+}
+
+.action-btn.complete:hover {
+  background: #9C27B0;
+  color: white;
+}
+
+.action-btn.view {
+  background: #fff3e0;
+  color: #FF9800;
+}
+
+.action-btn.view:hover {
+  background: #FF9800;
+  color: white;
+}
+
+.action-btn.edit {
+  background: #e3f2fd;
+  color: #2196F3;
+}
+
+.action-btn.edit:hover {
+  background: #2196F3;
+  color: white;
+}
+
+.action-btn.delete {
+  background: #ffebee;
+  color: #f44336;
+}
+
+.action-btn.delete:hover {
+  background: #f44336;
+  color: white;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.3s;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s;
+}
+
+.bracket-modal {
+  max-width: 900px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  padding: 24px 32px;
+  border-bottom: 2px solid #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.close-btn {
+  width: 40px;
+  height: 40px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  font-size: 28px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  background: #e0e0e0;
+  color: var(--text-primary);
+}
+
+.modal-body {
+  padding: 32px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.modal-footer {
+  padding: 20px 32px;
+  border-top: 2px solid #f5f5f5;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+/* Participants List */
+.participants-list {
+  margin-bottom: 32px;
+}
+
+.participants-list h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.participant-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: #f8f8f8;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.participant-card:hover {
+  background: #e8f5e9;
+}
+
+.participant-number {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.participant-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.participant-info strong {
+  font-size: 14px;
+}
+
+.site-number {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.participant-status {
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.participant-status.playing {
+  background: #fff3e0;
+  color: #FF9800;
+}
+
+.participant-status.eliminated {
+  background: #f5f5f5;
+  color: #757575;
+}
+
+/* Winner Section */
+.winner-section {
+  padding: 24px;
+  background: linear-gradient(135deg, #fff9e6, #ffe8cc);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.winner-section h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.winner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.winner-icon {
+  font-size: 80px;
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.winner-info h4 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #FF9800;
+  margin-bottom: 8px;
+}
+
+.winner-info p {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .game-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-game {
+    padding: 16px;
+  }
+
+  .game-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .tournaments-table {
+    overflow-x: auto;
+  }
+
+  .tournaments-table table {
+    min-width: 800px;
+  }
+
+  .modal-content {
+    max-width: 100%;
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .participants-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-header h2 {
+    font-size: 18px;
+  }
+
+  .stat-value {
+    font-size: 24px;
+  }
+
+  .admin-tabs {
+    flex-wrap: wrap;
+  }
+
+  .admin-tabs .tab {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}

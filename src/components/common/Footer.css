@@ -1,0 +1,176 @@
+.footer {
+  background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%); /* ✅ 연한 초록색 그라데이션 */
+  color: #2c3e50; /* ✅ 어두운 텍스트 (가독성) */
+  padding: 60px 0 0;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-section h3 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #2e7d32; /* ✅ 진한 초록 */
+  font-weight: 800;
+  font-family: 'Georgia', serif;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #2e7d32; /* ✅ 진한 초록 */
+}
+
+.footer-section p {
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.footer-section a {
+  display: block;
+  color: #555;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.footer-section a:hover {
+  color: #2e7d32;
+  transform: translateX(4px);
+}
+
+/* 소셜 링크 */
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  font-size: 22px;
+  transition: all 0.3s;
+  margin: 0;
+}
+
+.social-links a:hover {
+  background: #4caf50;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+/* 연락처 아이템 */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+.contact-item svg {
+  font-size: 18px;
+  color: #4caf50;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ✅ 캠핑장 지도 버튼 */
+.map-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  margin-top: 16px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.map-button:hover {
+  background: #2e7d32;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.map-button svg {
+  font-size: 20px;
+}
+
+/* Footer 하단 */
+.footer-bottom {
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 28px 32px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.footer-bottom p {
+  color: #2c3e50;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 24px;
+  }
+
+  .footer {
+    padding: 40px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 16px;
+  }
+
+  .social-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .map-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

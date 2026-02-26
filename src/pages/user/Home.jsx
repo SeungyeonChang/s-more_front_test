@@ -890,7 +890,7 @@ const Home = () => {
             <div className="search-field">
               <label>
                 {/* <FiCalendar /> */}
-                <span>체크아웃</span>
+                <span>체크아웃111</span>
               </label>
               <input
                 type="date"
